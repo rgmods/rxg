@@ -126,7 +126,6 @@ const typeDefs = gql`
     usage_mb_down: Int!
     usage_mb_up: Int!
     usage_minutes: Int!
-    id: String!
     created_at: String!
     updated_at: String!
     account_group_id: Int!

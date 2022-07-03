@@ -1,35 +1,35 @@
 module.exports = {
   Query: {
     device: async(_, { id }, { dataSources }) => {
-      let res = await dataSources.api.getDevice({ id })
+      let res = await dataSources.dataSource.getDevice({ id })
       return res
     },
     devices: async(_, {}, { dataSources }) => {
-      let res = await dataSources.api.getDevices()
+      let res = await dataSources.dataSource.getDevices()
       return res
     },
     account: async(_, { id }, { dataSources }) => {
-      let res = await dataSources.api.getAccount({ id })
+      let res = await dataSources.dataSource.getAccount({ id })
       return res
     },
     accounts: async(_, {}, { dataSources }) => {
-      let res = await dataSources.api.getAccounts()
+      let res = await dataSources.dataSource.getAccounts()
       return res
     },
     accountGroup: async(_, { id }, { dataSources }) => {
-      let res = await dataSources.api.getAccountGroup({ id })
+      let res = await dataSources.dataSource.getAccountGroup({ id })
       return res
     },
     accountGroups: async(_, {}, { dataSources }) => {
-      let res = await dataSources.api.getAccountGroups()
+      let res = await dataSources.dataSource.getAccountGroups()
       return res
     },
     usagePlan: async(_, { id }, { dataSources }) => {
-      let res = await dataSources.api.getUsagePlan({ id })
+      let res = await dataSources.dataSource.getUsagePlan({ id })
       return res
     },
     usagePlans: async(_, {}, { dataSources }) => {
-      let res = await dataSources.api.getUsagePlans()
+      let res = await dataSources.dataSource.getUsagePlans()
       return res
     }
   }

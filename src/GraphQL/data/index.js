@@ -1,14 +1,15 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
-const { deviceReducer, accountReducer }  = require('./reducers/index');
+const { deviceReducer, accountReducer, accountGroupReducer }  = require('./reducers/index');
 
 class dataSource extends RESTDataSource {
   constructor(config = {}) {
     super();
  
     const { domain, apiKey } = config;
-    if(domain.startsWith('https://')) this.url = `${domain}/admin/scaffolds`;
     this.url = `https://${domain}/admin/scaffolds`,
     this.apiKey = apiKey;
+
+    this.baseURL = this.url;
   }
 
   getDevice({ id }) {
