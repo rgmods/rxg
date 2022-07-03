@@ -1,18 +1,16 @@
-const { ApolloServer } = require('apollo-server');
-
-const typeDefs   = require('./graphql/schema/');
-const resolvers  = require('./graphql/resolvers/');
-const dataSource = require('./graphql/data/');
 const { default: axios } = require('axios');
+const GraphQLServer      = require('./GraphQL');
 
 class rxgWrapper {
   constructor(wrapperConfig = {}) {
     console.assert(wrapperConfig, `MISSING CONFIG PARAMETER`);
-    const { apiKey, domain } = wrapperConfig.rxgSettings;
+    const { apiKey, domain } = wrapperConfig;
 
     if(domain.startsWith('https://')) this.url = `${domain}/admin/scaffolds`;
     this.url = `https://${domain}/admin/scaffolds`,
     this.apiKey = apiKey;
+
+    this.GraphQLServer = new GraphQLServer(wrapperConfig);
   }
 
   create(table, new_record) {
