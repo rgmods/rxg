@@ -60,19 +60,19 @@ async function accountReducer(instance, account) {
     usage_mb_down: account.usage_mb_down || 0,
     usage_mb_up: account.usage_mb_up || 0,
     usage_minutes: account.usage_minutes || 0,
-    zip: account.zip || "",
+    id: account.id || "",
     created_at: account.created_at || "",
     updated_at: account.updated_at || "",
     account_group_id: account.account_group_id || 0,
     usage_plan_id: account.usage_plan_id || 0,
-    // account_group: await instance.getAccountGroup({ zip: account.account_group_id }) || {},
-    // usage_plan: await instance.getUsagePlan({ zip: account.usage_plan_id })
+    account_group: await instance.getAccountGroup({ id: account.account_group_id }) || {},
+    usage_plan: await instance.getUsagePlan({ id: account.usage_plan_id })
   }
 }
 
 async function deviceReducer(instance, device) {
   return {
-    account: await instance.getAccount({ zip: device.account_id }) || {},
+    account: await instance.getAccount({ id: device.account_id }) || {},
     id: device.id || 0,
     binat: device.binat || false,
     created_by: device.created_by || "",
