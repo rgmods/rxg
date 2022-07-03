@@ -14,5 +14,11 @@
   "bugs": {
     "url": "https://github.com/rgmods/rxg/issues"
   },
-  "homepage": "https://github.com/rgmods/rxg#readme"
+  "homepage": "https://github.com/rgmods/rxg#readme",
+  "dependencies": {
+    "apollo-datasource": "^3.3.2",
+    "apollo-datasource-rest": "^3.6.1",
+    "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
+  }
 }
